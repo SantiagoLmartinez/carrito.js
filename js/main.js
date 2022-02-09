@@ -61,7 +61,7 @@ const detectarButton = (data) => {
                 // console.log('Producto agregado +1', producto)
 
             }
-            // {...} copia el objeto/producto al carrito
+            // {...} copia el objeto/producto al carrito //Spread operator
             carrito[producto.id] = { ...producto }
             // console.log(carrito)
 
@@ -163,11 +163,3 @@ const accionBtnCarrito = () =>{
     })
 }
 
-// fetchData()
-
-// ,{
-//     "precio": 60,
-//     "id": 6,
-//     "title": "Gaseosa",
-//     "img": "https://cdn.pixabay.com/photo/2012/04/03/14/44/soda-25188_960_720.png"
-// }

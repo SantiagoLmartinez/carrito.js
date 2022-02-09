@@ -29,7 +29,14 @@
     "id": 5,
     "title": "Papas Fritas",
     "img": "https://cdn.pixabay.com/photo/2017/02/01/11/19/cartoon-chips-2029737_960_720.png"
-} 
+},
+{
+    "precio": 60,
+    "id": 6,
+    "title": "Gaseosa",
+    "img": "https://cdn.pixabay.com/photo/2012/04/03/14/44/soda-25188_960_720.png"
+}
+
    
 ]
 
