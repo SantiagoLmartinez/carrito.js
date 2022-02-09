@@ -70,18 +70,22 @@ const detectarButton = (data) =>{
     })
 }
 const pintarCarrito = () => {
+    _itemsCarrito.innerHTML = ''
     const _template = document.getElementById('templateCarrito').content
     const _fragment = document.createDocumentFragment()
+    // const _footerCarrito = document.innerHTML = ''
+
     // Limpiamos el container del carrito
-    // carrito.innerHTML = ''
+    // _itemsCarrito.innerHTML = ''
+
     // Tranformamos carrito a array
     // Object.values(carrito)
     Object.values(carrito).forEach( producto =>{
         console.log('el producto',producto)
-        _template.querySelector('th').textContent = producto.cantidad
+        _template.querySelector('th').textContent = producto.id
         _template.querySelectorAll('td')[0].textContent = producto.title
         _template.querySelectorAll('td')[1].textContent = producto.cantidad
-        _template.querySelector('span').textContent = producto.precio
+        _template.querySelector('span').textContent = producto.precio * producto.cantidad
 
         const _clone = _template.cloneNode(true)
         _fragment.appendChild(_clone)

@@ -2,38 +2,38 @@
     {
         "precio": 10,
         "id": 1,
-        "title": "Producto 1",
+        "title": "Hamburguesa",
         "img": "https://cdn.pixabay.com/photo/2012/04/13/01/51/hamburger-31775_960_720.png"
     },
     
 {
     "precio": 20,
     "id": 2,
-    "title": "Producto 2",
-    "img": "https://cdn.pixabay.com/photo/2012/04/13/01/51/hamburger-31775_960_720.png"
+    "title": "Pizza",
+    "img": "https://cdn.pixabay.com/photo/2012/04/01/16/51/pizza-23477_960_720.png"
 },
 {
     "precio": 30,
     "id": 3,
-    "title": "Producto 3",
-    "img": "https://cdn.pixabay.com/photo/2012/04/13/01/51/hamburger-31775_960_720.png"
+    "title": "Sanguchito",
+    "img": "https://cdn.pixabay.com/photo/2014/04/03/10/44/sandwich-311262_960_720.png"
 },
 {
     "precio": 40,
     "id": 4,
-    "title": "Producto 4",
-    "img": "https://cdn.pixabay.com/photo/2012/04/13/01/51/hamburger-31775_960_720.png"
+    "title": "Taco",
+    "img": "https://cdn.pixabay.com/photo/2013/07/13/09/37/taco-155812_960_720.png"
 },
 {
     "precio": 50,
     "id": 5,
-    "title": "Producto 5",
-    "img": "https://cdn.pixabay.com/photo/2012/04/13/01/51/hamburger-31775_960_720.png"
+    "title": "Papas Fritas",
+    "img": "https://cdn.pixabay.com/photo/2017/02/01/11/19/cartoon-chips-2029737_960_720.png"
 },{
     "precio": 60,
     "id": 6,
-    "title": "Producto 6",
-    "img": "https://cdn.pixabay.com/photo/2012/04/13/01/51/hamburger-31775_960_720.png"
+    "title": "Gaseosa",
+    "img": "https://cdn.pixabay.com/photo/2012/04/03/14/44/soda-25188_960_720.png"
 }
    
    
