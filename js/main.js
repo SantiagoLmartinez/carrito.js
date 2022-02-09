@@ -5,6 +5,8 @@ let carrito = {}
 
 // const
 const _itemsCarrito = document.getElementById('itemsCarrito')
+const _footerCarrito = document.getElementById('footerCarrito')
+
 
 // Para asegurarnos que se cargo el HTML X2
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -70,28 +72,61 @@ const detectarButton = (data) =>{
     })
 }
 const pintarCarrito = () => {
-    _itemsCarrito.innerHTML = ''
     const _template = document.getElementById('templateCarrito').content
     const _fragment = document.createDocumentFragment()
-    // const _footerCarrito = document.innerHTML = ''
-
+    
     // Limpiamos el container del carrito
-    // _itemsCarrito.innerHTML = ''
-
-    // Tranformamos carrito a array
-    // Object.values(carrito)
+    _itemsCarrito.innerHTML = ''
+    
+    // Tranformamos carrito a array = Object.values(carrito)
     Object.values(carrito).forEach( producto =>{
         console.log('el producto',producto)
         _template.querySelector('th').textContent = producto.id
         _template.querySelectorAll('td')[0].textContent = producto.title
         _template.querySelectorAll('td')[1].textContent = producto.cantidad
-        _template.querySelector('span').textContent = producto.precio * producto.cantidad
+        let total = producto.precio * producto.cantidad
+        _template.querySelector('span').textContent = total
 
         const _clone = _template.cloneNode(true)
         _fragment.appendChild(_clone)
     })
     _itemsCarrito.appendChild(_fragment)
-
+    pintarFooterCarrito()
+    // _footerCarrito.innerHTML = ''
+    // accionBtnCarrito()
 }
+
+const pintarFooterCarrito = () =>{
+    _footerCarrito.innerHTML = ''
+    const _template = document.getElementById('templateFooterCarrito').content
+    const _fragment = document.createDocumentFragment()
+
+    //reduce 1-acumulador, 2-propiedad a iterar, 3- operacion a realizar, 4- tipo de dato que devuelve
+    const nCantidad = Object.values(carrito).reduce((acumulador, {cantidad})=> acumulador + cantidad, 0)
+    console.log('Total: ',nCantidad)
+
+    const nTotal = Object.values(carrito).reduce((acumulador, {cantidad, precio})=> acumulador + (cantidad * precio), 0)
+    console.log('Total: ',nTotal)
+    
+
+    _template.querySelector('td').textContent = nCantidad
+    _template.querySelector('span').textContent = nTotal
+
+    const _clone = _template.cloneNode(true)
+        _fragment.appendChild(_clone)
+        _footerCarrito.appendChild(_fragment)
+
+         }
+// const accionBtnCarrito = () =>{
+
+// }
+
 // fetchData()
 
+// ,{
+//     "precio": 60,
+//     "id": 6,
+//     "title": "Gaseosa",
+//     "img": "https://cdn.pixabay.com/photo/2012/04/03/14/44/soda-25188_960_720.png"
+// }
+  

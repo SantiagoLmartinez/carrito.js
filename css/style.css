@@ -1,8 +1,15 @@
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+}
 .cardsContainer{
     margin: 0 auto;
+ 
 }
 
-/* .card-container{} */
+.card-container{
+    width: 200px;
+    padding: 0.3em;
+}
 
 .img-card{
     /* object-fit: fill; */
