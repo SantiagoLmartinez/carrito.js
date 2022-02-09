@@ -1,9 +1,13 @@
 *{
     margin: 0; padding: 0; box-sizing: border-box;
 }
+
+body{
+    /* background-color: rgba(0, 0, 0, 0.877); */
+}
+
 .cardsContainer{
-    margin: 0 auto;
- 
+    margin: 0 auto;;
 }
 
 .card-container{
@@ -11,8 +15,24 @@
     /* width: 200px; */
 }
 
+.h5Card, .p-precio{
+    /* color:red; */
+    font-size: 1em;
+    text-align: center;
+    font-weight: 600;
+}
+.card-bg{
+    background-color: rgba(81, 123, 163, 0.2);
+}
+
+p>span{
+    /* color:  red; */
+    font-weight: 700;
+
+} 
 .img-card{
     /* object-fit: fill; */
+    margin-top: 1em;
     object-fit: scale-down;
     height: 150px;
 }

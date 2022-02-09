@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
+    <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -13,7 +14,7 @@
 <body>
     <h1 class="text-center bg bg-primary mb-2">Carrito</h1>
     <!-- <div class="row container cardsContainer" id="productosContainer"> -->
-    <div class="row   col-12 container cardsContainer" id="productosContainer">
+    <div class="row container cardsContainer" id="productosContainer">
 
         <!-- <div class="col-4 ">
         <div class="card">
@@ -32,7 +33,7 @@
     <section class="carrito row mt-3">
         <!-- <div class="d-flex justify-content-center container"> -->
         <div class="d-flex justify-content-center container">
-            <div class="col-10   ">
+            <div class="col-10">
                 <h4>Carrito de compras</h4>
                 <table class="table">
                     <thead>
@@ -89,16 +90,20 @@
 
     <!-- template card-Items -->
     <template id="template">
-        <div class="col-4 card-container">
-            <div class="card">
+        <!-- <div class="col-6 col-lg-4 col-xl-3 card-container"> -->
+            <div class="col-6 col-lg-4 col-xl-3 card-container">
+
+            <div class="card card-bg">
                 <img src="" alt="img" class="card-img-top img-card">
-                <div class="card-body">
-                    <h5 class="card-title">
+                <div class="card-body ">
+                    <h5 class="card-title h5Card">
                         Manzana
                     </h5>
-                    <p class="card-text">$ <span> 500</span>
+                    <p class="card-text p-precio">$ <span  class="sp-precio"> 500</span>
                     </p>
-                    <button href="#" class="btn btn-primary">Comprar</button>
+                    <div class=" d-flex justify-content-center"> 
+                        <button href="#" class="btn btn-info">Comprar</button>
+                    </div>
                 </div>
             </div>
         </div>
