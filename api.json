@@ -29,7 +29,13 @@
     "id": 5,
     "title": "Producto 5",
     "img": "https://cdn.pixabay.com/photo/2012/04/13/01/51/hamburger-31775_960_720.png"
+},{
+    "precio": 60,
+    "id": 6,
+    "title": "Producto 6",
+    "img": "https://cdn.pixabay.com/photo/2012/04/13/01/51/hamburger-31775_960_720.png"
 }
+   
    
 ]
 
