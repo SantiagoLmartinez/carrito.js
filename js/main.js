@@ -58,12 +58,12 @@ const detectarButton = (data) => {
                 producto.cantidad = carrito[producto.id].cantidad + 1
                 // producto.cantidad++
 
-                console.log('Producto agregado +1', producto)
+                // console.log('Producto agregado +1', producto)
 
             }
             // {...} copia el objeto/producto al carrito
             carrito[producto.id] = { ...producto }
-            console.log(carrito)
+            // console.log(carrito)
 
             pintarCarrito()
 
@@ -80,20 +80,23 @@ const pintarCarrito = () => {
 
     // Tranformamos carrito a array = Object.values(carrito)
     Object.values(carrito).forEach(producto => {
-        console.log('el producto', producto)
+        // console.log('el producto', producto)
         _template.querySelector('th').textContent = producto.id
         _template.querySelectorAll('td')[0].textContent = producto.title
         _template.querySelectorAll('td')[1].textContent = producto.cantidad
         let total = producto.precio * producto.cantidad
         _template.querySelector('span').textContent = total
+        // btn
+        _template.querySelector('#btnAdd').dataset.id = producto.id
+        _template.querySelector('#btnRemove').dataset.id = producto.id
+
 
         const _clone = _template.cloneNode(true)
         _fragment.appendChild(_clone)
     })
     _itemsCarrito.appendChild(_fragment)
     pintarFooterCarrito()
-    // _footerCarrito.innerHTML = ''
-    // accionBtnCarrito()
+    accionBtnCarrito()
 }
 
 const pintarFooterCarrito = () => {
@@ -108,10 +111,10 @@ const pintarFooterCarrito = () => {
 
     //reduce 1-acumulador, 2-propiedad a iterar, 3- operacion a realizar, 4- tipo de dato que devuelve
     const nCantidad = Object.values(carrito).reduce((acumulador, { cantidad }) => acumulador + cantidad, 0)
-    console.log('Total: ', nCantidad)
+    // console.log('Total: ', nCantidad)
 
     const nTotal = Object.values(carrito).reduce((acumulador, { cantidad, precio }) => acumulador + (cantidad * precio), 0)
-    console.log('Total: ', nTotal)
+    // console.log('Total: ', nTotal)
 
 
     _template.querySelector('td').textContent = nCantidad
@@ -123,15 +126,42 @@ const pintarFooterCarrito = () => {
 
     const _btnVaciarCarrito = document.getElementById('vaciarCarrito')
     _btnVaciarCarrito.addEventListener('click', () => {
-        console.log('diste click para vaciar carrito')
+        // console.log('diste click para vaciar carrito')
         carrito = {}
         pintarCarrito()
     })
 
 }
-// const accionBtnCarrito = () =>{
+const accionBtnCarrito = () =>{
+    const _btnAdd = document.querySelectorAll('#itemsCarrito .btn-info')
+    const _btnRemove = document.querySelectorAll('#itemsCarrito .btn-danger')
 
-// }
+    _btnAdd.forEach(btn =>{
+        btn.addEventListener('click', ()=>{
+            // console.log('diste click en +')
+            const producto = carrito[btn.dataset.id]
+            producto.cantidad ++
+            carrito[btn.dataset.id] = {... producto}
+            pintarCarrito()
+        })
+    })
+
+    _btnRemove.forEach(btn =>{
+        btn.addEventListener('click', ()=>{
+            // console.log('diste click en -')
+            const producto = carrito[btn.dataset.id]
+            producto.cantidad --
+            if(producto.cantidad === 0){
+                // delete se usa para borrar solo en objetos
+                delete carrito[btn.dataset.id]
+            }else{
+                carrito[btn.dataset.id] = {... producto}
+            }
+            pintarCarrito()
+            
+        })
+    })
+}
 
 // fetchData()
 
