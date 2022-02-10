@@ -53,6 +53,14 @@ const detectarButton = (data) => {
             const producto = data.find(item => item.id === parseInt(button.dataset.id))
             producto.cantidad = 1
 
+            // ALERT PRODUCTO AGREGADO AL  CARRITO
+            const alert = document.querySelector('.alert')
+            setTimeout( 
+                function(){
+                alert.classList.add('hide')   
+                },2000)
+                alert.classList.remove('hide')
+
             if (carrito.hasOwnProperty(producto.id)) {
                 // en caso de que el producto exista sumar 1 al carrito
                 producto.cantidad = carrito[producto.id].cantidad + 1
@@ -126,6 +134,15 @@ const pintarFooterCarrito = () => {
 
     const _btnVaciarCarrito = document.getElementById('vaciarCarrito')
     _btnVaciarCarrito.addEventListener('click', () => {
+
+         // ALERT VACIAR CARRITO
+         const alert = document.querySelector('.alert-warning')
+         setTimeout( 
+             function(){
+             alert.classList.add('hide')   
+             },2000)
+             alert.classList.remove('hide')
+
         // console.log('diste click para vaciar carrito')
         carrito = {}
         pintarCarrito()
@@ -139,6 +156,15 @@ const accionBtnCarrito = () =>{
     _btnAdd.forEach(btn =>{
         btn.addEventListener('click', ()=>{
             // console.log('diste click en +')
+
+             // ALERT Agregar Producto
+         const alert = document.querySelector('.alert-primary')
+         setTimeout( 
+             function(){
+             alert.classList.add('hide')   
+             },2000)
+             alert.classList.remove('hide')
+            
             const producto = carrito[btn.dataset.id]
             producto.cantidad ++
             carrito[btn.dataset.id] = {... producto}
@@ -149,6 +175,16 @@ const accionBtnCarrito = () =>{
     _btnRemove.forEach(btn =>{
         btn.addEventListener('click', ()=>{
             // console.log('diste click en -')
+            
+             // ALERT Agregar Producto
+         const alert = document.querySelector('.alert-danger')
+         setTimeout( 
+             function(){
+             alert.classList.add('hide')   
+             },2000)
+             alert.classList.remove('hide')
+            
+
             const producto = carrito[btn.dataset.id]
             producto.cantidad --
             if(producto.cantidad === 0){
@@ -163,3 +199,6 @@ const accionBtnCarrito = () =>{
     })
 }
 
+const alertProductoAgregado = () => {
+    document.querySelector('.alert-primary')
+}
