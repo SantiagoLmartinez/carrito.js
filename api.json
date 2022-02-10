@@ -35,9 +35,19 @@
     "id": 6,
     "title": "Gaseosa",
     "img": "https://cdn.pixabay.com/photo/2012/04/03/14/44/soda-25188_960_720.png"
+},
+{
+    "precio": 70,
+    "id": 7,
+    "title": "Helado",
+    "img": "https://cdn.pixabay.com/photo/2013/07/12/19/20/popsicle-154587_960_720.png"
+},
+{
+    "precio": 80,
+    "id": 8,
+    "title": "Muffin",
+    "img": "https://cdn.pixabay.com/photo/2021/04/24/01/01/cupcake-6203012_960_720.png"
 }
-
-   
 ]
 
 
